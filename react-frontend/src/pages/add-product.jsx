@@ -2,12 +2,12 @@ import { useState } from "react";
 
 const ProductForm = () => {
   const [formData, setFormData] = useState({
-    productCode: "",
-    productName: "",
-    productDescription: "",
-    productQuantity: "",
-    unitPrice: "",
-    category: "",
+    Code: "",
+    Name: "",
+    Description: "",
+    Quantity: "",
+    Price: "",
+    Category: "",
   });
 
   // Manejar cambios en los inputs
@@ -15,45 +15,69 @@ const ProductForm = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: String(value),
     });
   };
 
   // Función para limpiar el formulario
   const handleReset = () => {
     setFormData({
-      productCode: "",
-      productName: "",
-      productDescription: "",
-      productQuantity: "",
-      unitPrice: "",
-      category: "",
+      Code: "",
+      Name: "",
+      Description: "",
+      Quantity: "",
+      Price: "",
+      Category: "",
     });
   };
 
   // Función para enviar los datos al endpoint
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("https://example.com/api/products", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+    console.log("Datos enviados:", formData);
 
-      if (response.ok) {
-        alert("Producto registrado exitosamente");
-        handleReset(); // Limpia el formulario después de enviar
-      } else {
-        alert("Error al registrar el producto");
-      }
-    } catch (error) {
-      console.error("Error en el envío:", error);
-      alert("Error al conectar con el servidor");
+    // Validación previa de datos
+    if (!formData.Code || !formData.Name || !formData.Price || !formData.Quantity || !formData.Description || !formData.Category) {
+        alert("Por favor, completa todos los campos requeridos.");
+        return;
     }
-  };
+
+    // Asegúrate de que los valores estén correctamente formateados
+    const validFormData = {
+        Code: formData.Code.trim(),
+        Name: formData.Name.trim(),
+        Description: formData.Description.trim(),
+        Quantity: Number(formData.Quantity), // Convertir a número
+        Price: Number(formData.Price),       // Convertir a número
+        Category: formData.Category.trim(),
+    };
+
+    console.log("JSON generado:", JSON.stringify(validFormData));
+
+    try {
+        const response = await fetch("https://74el2vza40.execute-api.us-east-1.amazonaws.com/prod/createProdFunction", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(validFormData), // Enviar JSON válido
+        });
+
+        const responseText = await response.text();
+        console.log("Respuesta del servidor:", responseText);
+
+        if (response.ok) {
+            alert("Producto registrado exitosamente");
+            handleReset(); // Limpia el formulario después de enviar
+        } else {
+            console.error("Error al registrar el producto:", responseText);
+            alert("Producto ya existe, intente con otro codigo");
+        }
+    } catch (error) {
+        console.error("Error en el envío:", error);
+        alert("Error al conectar con el servidor.");
+    }
+};
 
   return (
     <>
@@ -74,8 +98,8 @@ const ProductForm = () => {
       <input
         type="text"
         id="productCode"
-        name="productCode"
-        value={formData.productCode}
+        name="Code"
+        value={formData.Code}
         onChange={handleChange}
         className="w-full border border-sky-700 rounded p-2 focus:outline-none focus:ring focus:ring-sky-300"
         placeholder="Código del Producto"
@@ -91,8 +115,8 @@ const ProductForm = () => {
           <input
             type="text"
             id="productName"
-            name="productName"
-            value={formData.productName}
+            name="Name"
+            value={formData.Name}
             onChange={handleChange}
             className="w-full border border-sky-700 rounded p-2 focus:outline-none focus:ring focus:ring-sky-300"
             placeholder="Nombre del Producto"
@@ -110,8 +134,8 @@ const ProductForm = () => {
           </label>
           <textarea
             id="productDescription"
-            name="productDescription"
-            value={formData.productDescription}
+            name="Description"
+            value={formData.Description}
             onChange={handleChange}
             className="w-full border border-sky-700 rounded p-2 focus:outline-none focus:ring focus:ring-sky-300"
             placeholder="Descripción del Producto"
@@ -129,10 +153,10 @@ const ProductForm = () => {
               Cantidad
             </label>
             <input
-              type="number"
+              type="text"
               id="productQuantity"
-              name="productQuantity"
-              value={formData.productQuantity}
+              name="Quantity"
+              value={formData.Quantity}
               onChange={handleChange}
               className="w-full border border-sky-700 rounded p-2 focus:outline-none focus:ring focus:ring-sky-300"
               placeholder="Cantidad"
@@ -146,11 +170,11 @@ const ProductForm = () => {
               Precio Unitario
             </label>
             <input
-              type="number"
+              type="text"
               step="0.01"
               id="unitPrice"
-              name="unitPrice"
-              value={formData.unitPrice}
+              name="Price"
+              value={formData.Price}
               onChange={handleChange}
               className="w-full border border-sky-700 rounded p-2 focus:outline-none focus:ring focus:ring-sky-300"
               placeholder="Precio Unitario"
@@ -165,8 +189,8 @@ const ProductForm = () => {
             </label>
             <select
               id="category"
-              name="category"
-              value={formData.category}
+              name="Category"
+              value={formData.Category}
               onChange={handleChange}
               className="w-full border border-sky-700 rounded p-2 focus:outline-none focus:ring focus:ring-sky-300"
             >
