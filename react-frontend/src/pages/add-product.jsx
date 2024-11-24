@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import { productAdapter } from "../adapter/product-adapter";
+import { Toaster, toast } from 'sonner'
 const ProductForm = () => {
   const [formData, setFormData] = useState({
     productCode: "",
@@ -30,6 +31,20 @@ const ProductForm = () => {
       category: "",
     });
   };
+  const handleCreateProduct = async () => {
+    toast.promise(async () => {
+      await productAdapter.createProduct(formData)
+    }, {
+      loading: 'Creando producto...',
+      success: () => {
+        return 'Producto creado exitosamente'
+      },
+      error: (err) => {
+        console.error('Error al crear producto:', err)
+        return 'Error al crear producto por favor intenta de nuevo.'
+      }
+    })
+  }
 
   // Función para enviar los datos al endpoint
   const handleSubmit = async (e) => {
@@ -57,6 +72,7 @@ const ProductForm = () => {
 
   return (
     <>
+    <Toaster />
     <h1 className="text-sky-700 text-4xl font-bold mb-20 mt-12 text-center">
       Registrar Productos
     </h1>
@@ -189,7 +205,7 @@ const ProductForm = () => {
           </button>
           <button
             type="button"
-            onClick={handleReset}
+            onClick={handleCreateProduct}
             className="bg-white border border-sky-700 text-sky-700 px-4 py-2 rounded hover:bg-sky-100"
           >
             Limpiar
