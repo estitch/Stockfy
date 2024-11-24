@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "code": "P001",
+    "name": "Laptop HP",
+    "description": "Laptop de 14 pulgadas con procesador Intel i5.",
+    "stock": 25,
+    "price": 750.00,
+    "category": "Tecnología"
+  },
+  {
+    "id": 2,
+    "code": "P002",
+    "name": "Smartphone Samsung",
+    "description": "Teléfono inteligente con 128GB de almacenamiento.",
+    "stock": 50,
+    "price": 299.99,
+    "category": "Electrónica"
+  },
+  {
+    "id": 3,
+    "code": "P003",
+    "name": "Mouse Logitech",
+    "description": "Mouse inalámbrico ergonómico.",
+    "stock": 100,
+    "price": 20.50,
+    "category": "Accesorios"
+  },
+  {
+    "id": 4,
+    "code": "P004",
+    "name": "Teclado Mecánico",
+    "description": "Teclado mecánico con retroiluminación RGB.",
+    "stock": 15,
+    "price": 45.99,
+    "category": "Accesorios"
+  },
+  {
+    "id": 5,
+    "code": "P005",
+    "name": "Monitor LG",
+    "description": "Monitor Full HD de 24 pulgadas.",
+    "stock": 30,
+    "price": 180.00,
+    "category": "Tecnología"
+  },
+  {
+    "id": 6,
+    "code": "P006",
+    "name": "Cargador Rápido",
+    "description": "Cargador de 20W compatible con USB-C.",
+    "stock": 200,
+    "price": 15.00,
+    "category": "Accesorios"
+  },
+  {
+    "id": 7,
+    "code": "P007",
+    "name": "Audífonos Sony",
+    "description": "Audífonos inalámbricos con cancelación de ruido.",
+    "stock": 40,
+    "price": 120.00,
+    "category": "Electrónica"
+  },
+  {
+    "id": 8,
+    "code": "P008",
+    "name": "Tablet Lenovo",
+    "description": "Tablet de 10 pulgadas con 64GB de almacenamiento.",
+    "stock": 20,
+    "price": 250.00,
+    "category": "Tecnología"
+  },
+  {
+    "id": 9,
+    "code": "P009",
+    "name": "Impresora Epson",
+    "description": "Impresora multifunción con sistema de tinta.",
+    "stock": 10,
+    "price": 150.00,
+    "category": "Oficina"
+  },
+  {
+    "id": 10,
+    "code": "P010",
+    "name": "Disco Duro Externo",
+    "description": "Disco duro de 1TB para almacenamiento portátil.",
+    "stock": 75,
+    "price": 55.00,
+    "category": "Accesorios"
+  },
+  {
+    "id": 11,
+    "code": "P011",
+    "name": "Silla Gamer",
+    "description": "Silla ergonómica ideal para videojuegos.",
+    "stock": 12,
+    "price": 230.00,
+    "category": "Muebles"
+  },
+  {
+    "id": 12,
+    "code": "P012",
+    "name": "Cámara Web",
+    "description": "Cámara Full HD ideal para videollamadas.",
+    "stock": 35,
+    "price": 40.00,
+    "category": "Electrónica"
+  },
+  {
+    "id": 13,
+    "code": "P013",
+    "name": "Parlante Bluetooth",
+    "description": "Parlante portátil con 10 horas de batería.",
+    "stock": 50,
+    "price": 60.00,
+    "category": "Accesorios"
+  },
+  {
+    "id": 14,
+    "code": "P014",
+    "name": "Router WiFi",
+    "description": "Router de doble banda con alta velocidad.",
+    "stock": 22,
+    "price": 80.00,
+    "category": "Electrónica"
+  }
+]
