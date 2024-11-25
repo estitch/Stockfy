@@ -24,7 +24,8 @@ class ProductService{
 
   // POST: Crear un nuevo producto
   async createProduct(productData){
-    const url = `${import.meta.env.API_BASE_URL}`
+    //const url = `${import.meta.env.API_BASE_URL}`
+    const url = "https://hxrksebmw2.execute-api.us-east-1.amazonaws.com/default/createProdFunction"
     try {
       const response = await axios.post(url, productData, {
         headers: {
