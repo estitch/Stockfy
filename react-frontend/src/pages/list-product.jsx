@@ -1,11 +1,10 @@
 import { useCallback, useRef, useEffect, useState } from 'react';
 import { productAdapter } from '../adapter/product-adapter';
 import ProductTable from '../components/table';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 import InventoryLoader from '../components/loader';
+import { exportToPDF } from '../utils/exportPdf';
 import { IconCloudDownload } from '@tabler/icons-react'
-import { Toaster, toast } from 'sonner'
+import { Toaster} from 'sonner'
 const QUANTITY_OPTIONS = [
   { label: 'Todas las cantidades', value: 'all' },
   { label: 'Menos de 10', value: '<10' },
@@ -34,47 +33,8 @@ export default function ListProduct() {
     quantity: 'all'
   });
 
-  const exportToPDF = async () => {
-    try {
-      // Mostrar notificación de inicio
-      toast('Generando el PDF, por favor espera...', {
-        description: 'Estamos procesando el reporte.',
-        type: 'info',
-      });
-  
-      const reportElement = tableRef.current;
-      if (!reportElement) {
-        throw new Error('No se encontró el elemento para exportar.');
-      }
-  
-      const canvas = await html2canvas(reportElement, { scale: 2 });
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF('l', 'mm', 'a4');
-  
-      const pageWidth = pdf.internal.pageSize.getWidth();
-      const pageHeight = pdf.internal.pageSize.getHeight();
-  
-      pdf.setFont('Helvetica', 'bold');
-      pdf.setFontSize(20);
-      pdf.text('Reporte de Inventario', pageWidth / 2, 20, { align: 'center' });
-  
-      const imgWidth = canvas.width;
-      const imgHeight = canvas.height;
-      const ratio = Math.min(pageWidth / imgWidth, (pageHeight - 30) / imgHeight);
-  
-      pdf.addImage(imgData, 'PNG', 10, 30, imgWidth * ratio - 20, imgHeight * ratio - 20);
-      pdf.save('reporte-inventario.pdf');
-  
-      // Mostrar notificación de éxito
-      toast.success('PDF generado exitosamente.', {
-        description: 'El archivo se ha descargado correctamente.',
-      });
-    } catch (error) {
-      // Mostrar notificación de error
-      toast.error('Error al generar el PDF.', {
-        description: error.message || 'Ocurrió un problema durante la exportación.',
-      });
-    }
+  const handleExportPDF = async () => {
+      exportToPDF(tableRef.current, 'Reporte de Productos');
   };
   
   const handleFilterChange = (e) => {
@@ -129,22 +89,8 @@ export default function ListProduct() {
     setLoading(true);
     try {
       const productsData = await productAdapter.getTransformedProducts();
-      //console.log(productsData)
-  
-      // Transformar nombres de propiedades a camelCase si es necesario
-      const transformedData = productsData.map(product => ({
-        id: product.id,
-        code: product.code,
-        price: Number(product.price),
-        description: product.description,
-        stock: Number(product.stock),
-        category: product.category,
-        name: product.name,
-      }));
-      //console.log(transformedData)
-  
-      setAllProducts(transformedData);
-      setFilteredProducts(transformedData);
+      setAllProducts(productsData);
+      setFilteredProducts(productsData);
     } catch (error) {
       console.error('Error fetching products:', error);
       setAllProducts([]);
@@ -172,7 +118,7 @@ export default function ListProduct() {
             </h1>
 
           <button
-              onClick={exportToPDF}
+              onClick={handleExportPDF}
               className="flex px-4 py-2 h-12 bg-white border border-sky-200 text-sky-800 rounded-lg hover:border-sky-900"
             >
               <IconCloudDownload className= ' mr-2 'stroke={2} />

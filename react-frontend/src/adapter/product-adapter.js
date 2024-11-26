@@ -7,8 +7,8 @@ class ProductAdapter {
       code: product.Code,
       name: product.Name,
       description: product.Description,
-      stock: product.Quantity,
-      price: product.Price,
+      stock: Number(product.Quantity),
+      price: Number(product.Price),
       category: product.Category,
     }
   }
