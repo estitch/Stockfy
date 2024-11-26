@@ -4,7 +4,7 @@ import ProductTable from '../components/table';
 import InventoryLoader from '../components/loader';
 import { exportToPDF } from '../utils/exportPdf';
 import { IconCloudDownload } from '@tabler/icons-react'
-import { Toaster} from 'sonner'
+import { Toaster, toast} from 'sonner'
 const QUANTITY_OPTIONS = [
   { label: 'Todas las cantidades', value: 'all' },
   { label: 'Menos de 10', value: '<10' },
@@ -26,6 +26,7 @@ export default function ListProduct() {
   const [loading, setLoading] = useState(true);
   const [allProducts, setAllProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [exportMode, setExportMode] = useState(false);
   const [filters, setFilters] = useState({
     minPrice: '',
     maxPrice: '',
@@ -34,8 +35,33 @@ export default function ListProduct() {
   });
 
   const handleExportPDF = async () => {
-      exportToPDF(tableRef.current, 'Reporte de Productos');
+    // Mostrar el mensaje de "generando" antes de iniciar
+    toast('Generando el PDF, por favor espera...', {
+      description: 'Estamos procesando el reporte.',
+      type: 'info',
+    });
+  
+    setExportMode(true);
+    // Esperar 2 segundos para que se actualice el DOM con el full table
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // Generar el PDF
+    try {
+      await exportToPDF(tableRef.current, 'Reporte de Productos');
+      // Mostrar éxito después de generar el PDF
+      toast.success('PDF generado exitosamente.', {
+        description: 'El archivo se ha descargado correctamente.',
+      });
+    } catch (error) {
+      // Manejar errores
+      toast.error('Error al generar el PDF.', {
+        description: error.message || 'Ocurrió un problema durante la exportación.',
+      });
+    } finally {
+      // Desactivar el modo de exportación
+      setExportMode(false);
+    }
   };
+  
   
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
@@ -202,7 +228,10 @@ export default function ListProduct() {
           </div>
 
           <div ref={tableRef}>
-            <ProductTable products={filteredProducts} />
+            <ProductTable 
+              products={filteredProducts} 
+              exportMode={exportMode}
+            />
           </div>
         </>
       )}

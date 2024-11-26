@@ -5,10 +5,6 @@ import { toast } from 'sonner';
 export const exportToPDF = async (elementRef, title = 'Reporte') => {
   try {
     // Mostrar notificación de inicio
-    toast('Generando el PDF, por favor espera...', {
-      description: 'Estamos procesando el reporte.',
-      type: 'info',
-    });
 
     if (!elementRef) {
       throw new Error('No se encontró el elemento para exportar.');
