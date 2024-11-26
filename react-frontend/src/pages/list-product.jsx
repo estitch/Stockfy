@@ -137,7 +137,7 @@ export default function ListProduct() {
         <InventoryLoader/>
       ) : (
         <>
-        <Toaster />
+        <Toaster richColors />
         <div className='my-10 flex justify-between items-center'>
           <h1 className="text-sky-700 text-4xl font-bold text-center">
               Consulta de Productos
