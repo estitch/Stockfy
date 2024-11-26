@@ -129,10 +129,11 @@ export default function ListProduct() {
     setLoading(true);
     try {
       const productsData = await productAdapter.getTransformedProducts();
-      console.log(productsData)
+      //console.log(productsData)
   
       // Transformar nombres de propiedades a camelCase si es necesario
       const transformedData = productsData.map(product => ({
+        id: product.id,
         code: product.code,
         price: Number(product.price),
         description: product.description,
@@ -140,7 +141,7 @@ export default function ListProduct() {
         category: product.category,
         name: product.name,
       }));
-      console.log(transformedData)
+      //console.log(transformedData)
   
       setAllProducts(transformedData);
       setFilteredProducts(transformedData);

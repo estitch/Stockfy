@@ -1,5 +1,4 @@
 import axios from 'axios';
-import productsData from '../data/products.json'
 class ProductService{
 // GET: Obtener lista de productos
   async getProduct() {

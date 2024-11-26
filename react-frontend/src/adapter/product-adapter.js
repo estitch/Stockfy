@@ -16,7 +16,7 @@ class ProductAdapter {
   async getTransformedProducts() {
     try {
       const response = await productService.getProduct(); // Obtiene el JSON
-      console.log('Response from productService:', response); // Inspección
+      //console.log('Response from productService:', response); // Inspección
 
       const parsedBody = JSON.parse(response.body);
       //console.log(parsedBody); // Asegúrate de que esto contiene los datos esperados
@@ -25,7 +25,7 @@ class ProductAdapter {
 
       // Extraer los datos del JSON
       const products = productsData || []; // Cambia `data` según la clave del JSON
-      console.log(products)
+      //console.log(products)
 
       // Verificar que sea un array antes de aplicar map
       if (!Array.isArray(products)) {

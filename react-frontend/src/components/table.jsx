@@ -5,6 +5,7 @@ export default function ProductTable({ products }) {
       <table className=" bg-white min-w-full rounded-xl">
         <thead className="rounded-xl">
           <tr>
+            <th className="border-none px-4 py-2 text-left">ID</th>
             <th className="border-none px-4 py-2 text-left">Código</th>
             <th className="border-none px-4 py-2 text-left">Nombre</th>
             <th className="border-none px-4 py-2 text-left">Descripción</th>
@@ -17,6 +18,7 @@ export default function ProductTable({ products }) {
           {products.length > 0 ? (
             products.map((product) => (
               <tr key={product.id} className="hover:bg-gray-50">
+                <td className="px-4 py-2">{product.id}</td>
                 <td className="px-4 py-2">{product.code}</td>
                 <td className="px-4 py-2">{product.name}</td>
                 <td className="px-4 py-2">{product.description}</td>
