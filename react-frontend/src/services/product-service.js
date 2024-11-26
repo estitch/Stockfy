@@ -3,12 +3,12 @@ import productsData from '../data/products.json'
 class ProductService{
 // GET: Obtener lista de productos
   async getProduct() {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(productsData)
-      }, 500)
-    })
-/*     const url = `${import.meta.env.API_BASE_URL}`
+//    return new Promise((resolve) => {
+//      setTimeout(() => {
+//        resolve(productsData)
+//      }, 500)
+//    })
+    const url = "https://4g67tkwc91.execute-api.us-east-1.amazonaws.com/consult/productos"
     try {
       const response = await axios.get(url, {
         headers: {
@@ -19,7 +19,7 @@ class ProductService{
     } catch (error) {
       console.error('Error al obtener productos:', error);
       return null
-    } */
+    }
   };
 
   // POST: Crear un nuevo producto

@@ -16,11 +16,10 @@ const QUANTITY_OPTIONS = [
 
 const CATEGORY_OPTIONS = [
   { label: 'Todas las categorías', value: '' },
-  { label: 'Electrónica', value: 'electronica' },
-  { label: 'Accesorios', value: 'accesorios' },
-  { label: 'Oficina', value: 'oficina' },
-  { label: 'Hogar', value: 'hogar' },
-  { label: 'Computación', value: 'computacion' }
+  { label: 'Electrónica', value: 'Electrónica' },
+  { label: 'Ropa', value: 'Ropa' },
+  { label: 'Alimentos', value: 'Alimentos' },
+  { label: 'Otros', value: 'Otros' },
 ];
 
 export default function ListProduct() {
@@ -130,8 +129,21 @@ export default function ListProduct() {
     setLoading(true);
     try {
       const productsData = await productAdapter.getTransformedProducts();
-      setAllProducts(productsData);
-      setFilteredProducts(productsData);
+      console.log(productsData)
+  
+      // Transformar nombres de propiedades a camelCase si es necesario
+      const transformedData = productsData.map(product => ({
+        code: product.code,
+        price: Number(product.price),
+        description: product.description,
+        stock: Number(product.stock),
+        category: product.category,
+        name: product.name,
+      }));
+      console.log(transformedData)
+  
+      setAllProducts(transformedData);
+      setFilteredProducts(transformedData);
     } catch (error) {
       console.error('Error fetching products:', error);
       setAllProducts([]);
@@ -140,6 +152,7 @@ export default function ListProduct() {
       setLoading(false);
     }
   }, []);
+  
 
   useEffect(() => {
     fetchProducts();
