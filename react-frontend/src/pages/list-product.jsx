@@ -158,6 +158,7 @@ export default function ListProduct() {
     try {
       const productsData = await productAdapter.getTransformedProducts();
       setAllProducts(productsData);
+      console.log(productsData)
       setFilteredProducts(productsData);
     } catch (error) {
       console.error('Error fetching products:', error);

@@ -29,16 +29,18 @@ const ProductTable = ({ products, exportMode = false }) => {
           <tr className="bg-sky-100">
             <th className="border-none px-4 py-2 text-left">Código</th>
             <th className="border-none px-4 py-2 text-left">Nombre</th>
+            <th className="border-none px-4 py-2 text-left">Descripción</th>
             <th className="border-none px-4 py-2 text-left">Categoría</th>
             <th className="border-none px-4 py-2 text-left">Precio</th>
             <th className="border-none px-4 py-2 text-left">Stock</th>
           </tr>
         </thead>
-        <tbody className="rounded-xl p-5 border-sky-900'">
+        <tbody className="rounded-xl p-5 border-t border-sky-200">
           {displayedProducts.map((product) => (
             <tr key={product.id} className="hover:bg-sky-50">
               <td className="px-4 py-2">{product.code}</td>
               <td className="px-4 py-2">{product.name}</td>
+              <td className="px-4 py-2">{product.description}</td>
               <td className="px-4 py-2">{product.category}</td>
               <td className="px-4 py-2">${product.price.toFixed(2)}</td>
               <td className="px-4 py-2">{product.stock}</td>
