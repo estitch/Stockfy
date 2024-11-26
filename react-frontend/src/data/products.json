@@ -1,128 +1,128 @@
 [
   {
-    "id": 1,
-    "code": "P001",
-    "name": "Laptop HP",
-    "description": "Laptop de 14 pulgadas con procesador Intel i5.",
-    "stock": 25,
-    "price": 750.00,
-    "category": "Tecnología"
+    "product.dynamo": 1,
+    "product.Code": "P001",
+    "product.Name": "Laptop HP",
+    "product.Description": "Laptop de 14 pulgadas con procesador Intel i5.",
+    "product.Quantity": 25,
+    "product.Price": 750.00,
+    "product.Category": "Tecnología"
   },
   {
-    "id": 2,
-    "code": "P002",
-    "name": "Smartphone Samsung",
-    "description": "Teléfono inteligente con 128GB de almacenamiento.",
-    "stock": 50,
-    "price": 299.99,
-    "category": "Electrónica"
+    "product.dynamo": 2,
+    "product.Code": "P002",
+    "product.Name": "Smartphone Samsung",
+    "product.Description": "Teléfono inteligente con 128GB de almacenamiento.",
+    "product.Quantity": 50,
+    "product.Price": 299.99,
+    "product.Category": "Electrónica"
   },
   {
-    "id": 3,
-    "code": "P003",
-    "name": "Mouse Logitech",
-    "description": "Mouse inalámbrico ergonómico.",
-    "stock": 100,
-    "price": 20.50,
-    "category": "Accesorios"
+    "product.dynamo": 3,
+    "product.Code": "P003",
+    "product.Name": "Mouse Logitech",
+    "product.Description": "Mouse inalámbrico ergonómico.",
+    "product.Quantity": 100,
+    "product.Price": 20.50,
+    "product.Category": "Accesorios"
   },
   {
-    "id": 4,
-    "code": "P004",
-    "name": "Teclado Mecánico",
-    "description": "Teclado mecánico con retroiluminación RGB.",
-    "stock": 15,
-    "price": 45.99,
-    "category": "Accesorios"
+    "product.dynamo": 4,
+    "product.Code": "P004",
+    "product.Name": "Teclado Mecánico",
+    "product.Description": "Teclado mecánico con retroiluminación RGB.",
+    "product.Quantity": 15,
+    "product.Price": 45.99,
+    "product.Category": "Accesorios"
   },
   {
-    "id": 5,
-    "code": "P005",
-    "name": "Monitor LG",
-    "description": "Monitor Full HD de 24 pulgadas.",
-    "stock": 30,
-    "price": 180.00,
-    "category": "Tecnología"
+    "product.dynamo": 5,
+    "product.Code": "P005",
+    "product.Name": "Monitor LG",
+    "product.Description": "Monitor Full HD de 24 pulgadas.",
+    "product.Quantity": 30,
+    "product.Price": 180.00,
+    "product.Category": "Tecnología"
   },
   {
-    "id": 6,
-    "code": "P006",
-    "name": "Cargador Rápido",
-    "description": "Cargador de 20W compatible con USB-C.",
-    "stock": 200,
-    "price": 15.00,
-    "category": "Accesorios"
+    "product.dynamo": 6,
+    "product.Code": "P006",
+    "product.Name": "Cargador Rápido",
+    "product.Description": "Cargador de 20W compatible con USB-C.",
+    "product.Quantity": 200,
+    "product.Price": 15.00,
+    "product.Category": "Accesorios"
   },
   {
-    "id": 7,
-    "code": "P007",
-    "name": "Audífonos Sony",
-    "description": "Audífonos inalámbricos con cancelación de ruido.",
-    "stock": 40,
-    "price": 120.00,
-    "category": "Electrónica"
+    "product.dynamo": 7,
+    "product.Code": "P007",
+    "product.Name": "Audífonos Sony",
+    "product.Description": "Audífonos inalámbricos con cancelación de ruido.",
+    "product.Quantity": 40,
+    "product.Price": 120.00,
+    "product.Category": "Electrónica"
   },
   {
-    "id": 8,
-    "code": "P008",
-    "name": "Tablet Lenovo",
-    "description": "Tablet de 10 pulgadas con 64GB de almacenamiento.",
-    "stock": 20,
-    "price": 250.00,
-    "category": "Tecnología"
+    "product.dynamo": 8,
+    "product.Code": "P008",
+    "product.Name": "Tablet Lenovo",
+    "product.Description": "Tablet de 10 pulgadas con 64GB de almacenamiento.",
+    "product.Quantity": 20,
+    "product.Price": 250.00,
+    "product.Category": "Tecnología"
   },
   {
-    "id": 9,
-    "code": "P009",
-    "name": "Impresora Epson",
-    "description": "Impresora multifunción con sistema de tinta.",
-    "stock": 10,
-    "price": 150.00,
-    "category": "Oficina"
+    "product.dynamo": 9,
+    "product.Code": "P009",
+    "product.Name": "Impresora Epson",
+    "product.Description": "Impresora multifunción con sistema de tinta.",
+    "product.Quantity": 10,
+    "product.Price": 150.00,
+    "product.Category": "Oficina"
   },
   {
-    "id": 10,
-    "code": "P010",
-    "name": "Disco Duro Externo",
-    "description": "Disco duro de 1TB para almacenamiento portátil.",
-    "stock": 75,
-    "price": 55.00,
-    "category": "Accesorios"
+    "product.dynamo": 10,
+    "product.Code": "P010",
+    "product.Name": "Disco Duro Externo",
+    "product.Description": "Disco duro de 1TB para almacenamiento portátil.",
+    "product.Quantity": 75,
+    "product.Price": 55.00,
+    "product.Category": "Accesorios"
   },
   {
-    "id": 11,
-    "code": "P011",
-    "name": "Silla Gamer",
-    "description": "Silla ergonómica ideal para videojuegos.",
-    "stock": 12,
-    "price": 230.00,
-    "category": "Muebles"
+    "product.dynamo": 11,
+    "product.Code": "P011",
+    "product.Name": "Silla Gamer",
+    "product.Description": "Silla ergonómica ideal para videojuegos.",
+    "product.Quantity": 12,
+    "product.Price": 230.00,
+    "product.Category": "Muebles"
   },
   {
-    "id": 12,
-    "code": "P012",
-    "name": "Cámara Web",
-    "description": "Cámara Full HD ideal para videollamadas.",
-    "stock": 35,
-    "price": 40.00,
-    "category": "Electrónica"
+    "product.dynamo": 12,
+    "product.Code": "P012",
+    "product.Name": "Cámara Web",
+    "product.Description": "Cámara Full HD ideal para videollamadas.",
+    "product.Quantity": 35,
+    "product.Price": 40.00,
+    "product.Category": "Electrónica"
   },
   {
-    "id": 13,
-    "code": "P013",
-    "name": "Parlante Bluetooth",
-    "description": "Parlante portátil con 10 horas de batería.",
-    "stock": 50,
-    "price": 60.00,
-    "category": "Accesorios"
+    "product.dynamo": 13,
+    "product.Code": "P013",
+    "product.Name": "Parlante Bluetooth",
+    "product.Description": "Parlante portátil con 10 horas de batería.",
+    "product.Quantity": 50,
+    "product.Price": 60.00,
+    "product.Category": "Accesorios"
   },
   {
-    "id": 14,
-    "code": "P014",
-    "name": "Router WiFi",
-    "description": "Router de doble banda con alta velocidad.",
-    "stock": 22,
-    "price": 80.00,
-    "category": "Electrónica"
+    "product.dynamo": 14,
+    "product.Code": "P014",
+    "product.Name": "Router WiFi",
+    "product.Description": "Router de doble banda con alta velocidad.",
+    "product.Quantity": 22,
+    "product.Price": 80.00,
+    "product.Category": "Electrónica"
   }
 ]

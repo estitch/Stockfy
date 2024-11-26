@@ -3,13 +3,13 @@ import { productService } from '../services/product-service'
 class ProductAdapter {
   transformedProductData(product) {
     return {
-      id: product.id,
-      code: product.code,
-      name: product.name,
-      description: product.description,
-      stock: product.stock,
-      price: product.price,
-      category: product.category,
+      id: product.dynamo,
+      code: product.Code,
+      name: product.Name,
+      description: product.Description,
+      stock: product.Quantity,
+      price: product.Price,
+      category: product.Category,
     }
   }
 
