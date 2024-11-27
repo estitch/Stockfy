@@ -9,7 +9,7 @@
 
 
 ## Manual de usuario
-https://docs.google.com/document/d1rOW6DlPI001Lqi3TElEUwxb35UTChBNJooKNcqGZcHg/edit?usp=sharing
+https://docs.google.com/document/d/1rOW6DlPI001Lqi3TElEUwxb35UTChBNJooKNcqGZcHg/edit?usp=sharing
 
 ## Demo Funcional
 http://stockfytais.s3-website-us-east-1.amazonaws.com/list-product 
