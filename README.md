@@ -17,6 +17,9 @@ http://stockfytais.s3-website-us-east-1.amazonaws.com/list-product
 ## Diapositivas
 https://docs.google.com/presentation/d/1cS2R636aXJEQdnfBYAO6Xke9EDN96pWS3d6svCs8CMU/edit?usp=sharing
 
+## Video Explicacion
+https://drive.google.com/file/d/1H2oRTOMqr1qobzPTBjklLv-4uhaiZoyd/view 
+
 ## Capturas 
 ## Creacion de Productos
 ![Creacion-Productos](./assets/registroProd.png)
