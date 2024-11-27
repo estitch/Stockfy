@@ -14,6 +14,8 @@ https://docs.google.com/document/d/1rOW6DlPI001Lqi3TElEUwxb35UTChBNJooKNcqGZcHg/
 ## Demo Funcional
 http://stockfytais.s3-website-us-east-1.amazonaws.com/list-product 
 
+## Diapositivas
+https://docs.google.com/presentation/d/1cS2R636aXJEQdnfBYAO6Xke9EDN96pWS3d6svCs8CMU/edit?usp=sharing
 
 ## Capturas 
 ## Creacion de Productos
